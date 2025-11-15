@@ -1,178 +1,34 @@
-# 🧪 React Unit Testing Öğrenme Projesi
+🦠 CovidMap – COVID-19 Canlı Takip Uygulaması
 
-Bu proje, React uygulamalarında **unit test** yazmayı öğrenmek isteyenler için hazırlanmış minimal bir başlangıç şablonudur. Jest ve React Testing Library kullanarak test yazma pratikleri yapabilirsiniz.
+CovidMap, dünya genelindeki COVID-19 vaka sayılarını, aktif vakaları, toplam vefatları ve daha fazlasını canlı olarak görüntülemenizi sağlayan bir web uygulamasıdır.
+React ile geliştirilmiş olup RapidAPI üzerinden gerçek zamanlı veriler çekmektedir.
 
-## 📚 İçerik
+🖼️ Ekran Görüntüsü
 
-- ✅ Jest test framework'ü kurulumu
-- ✅ React Testing Library entegrasyonu
-- ✅ Örnek Button komponenti
-- ✅ 10+ kapsamlı test örneği
-- ✅ Coverage raporu desteği
-- ✅ Mock konfigürasyonları
+![](./covid.gif)
 
-## 🚀 Başlangıç
+🚀 Özellikler
 
-### Gereksinimler
-- Node.js 16+ 
-- npm veya yarn
+🌍 Gerçek zamanlı COVID-19 istatistikleri
 
-### Kurulum
+📊 Toplam vaka, aktif vaka, toplam vefat bilgileri
 
-```bash
-# Bağımlılıkları yükleyin
-npm install
+🩺 Doktor bulma ve korunma önerileri sekmeleri
 
-# Geliştirme sunucusunu başlatın
-npm run dev
+⚡ Hızlı ve modern arayüz
 
-# Tarayıcıda açın
-# http://localhost:5173
-```
+🎨 Responsive tasarım
 
-## 🧪 Testleri Çalıştırma
+🔐 API bilgileri .env dosyasında gizlenmiştir
 
-### Temel Test Komutu
-```bash
-npm test
-```
+🛠️ Kullanılan Teknolojiler
 
-### Watch Modunda Testler
-Dosyalar değiştikçe testler otomatik çalışır:
-```bash
-npm run test:watch
-```
+React + Vite
 
-### Coverage Raporu ile Testler
-Test kapsama raporunu görmek için:
-```bash
-npm run test:coverage
-```
+Redux / Context (kullandıysan)
 
-Coverage raporu `coverage/` klasöründe oluşturulur. HTML raporunu görmek için:
-```bash
-coverage/lcov-report/index.html
-```
+Axios
 
-## 📁 Proje Yapısı
+RapidAPI – COVID-19 Statistics API
 
-```
-src/
-├── components/
-│   ├── Button.jsx          # Örnek test edilebilir component
-│   └── Button.css          # Component stilleri
-├── __tests__/
-│   └── Button.test.jsx     # Kapsamlı test örnekleri
-├── App.jsx                 # Ana uygulama
-├── main.jsx               # Entry point
-└── index.css              # Global stiller
-
-__mocks__/
-├── fileMock.cjs           # Dosya mock'ları (resim, font vb.)
-└── styleMock.cjs          # CSS mock'ları
-
-jest.config.mjs            # Jest konfigürasyonu
-jest.setup.mjs             # Jest setup dosyası
-babel.config.js            # Babel konfigürasyonu
-```
-
-## 📖 Test Örnekleri
-
-`src/__tests__/Button.test.jsx` dosyasında şu test senaryolarını bulabilirsiniz:
-
-1. ✅ Component'in render edilmesi
-2. ✅ Custom props ile render
-3. ✅ onClick event handler'ının çalışması
-4. ✅ Disabled state kontrolü
-5. ✅ Farklı variant class'larının kontrolü
-6. ✅ Multiple click senaryoları
-7. ✅ Accessibility (aria-label) kontrolü
-8. ✅ Snapshot testi
-
-## 🎯 Öğrenme Hedefleri
-
-Bu projede şunları öğrenebilirsiniz:
-
-- **Jest** test framework'ünün temel kullanımı
-- **React Testing Library** ile component testleri
-- `render`, `screen`, `fireEvent` gibi temel metodlar
-- Mock fonksiyonlar (`jest.fn()`)
-- Test matchers (`expect`, `toBeInTheDocument`, `toHaveBeenCalled` vb.)
-- Snapshot testleri
-- Test coverage ölçümü
-- CSS ve dosya mock'lama
-
-## 🔧 Yapılandırma Dosyaları
-
-### jest.config.mjs
-Jest'in temel ayarlarını içerir:
-- Test environment (jsdom)
-- Transform ayarları (babel-jest)
-- Module name mapping (CSS ve dosya mock'ları)
-
-### jest.setup.mjs
-Her test öncesi çalıştırılan setup dosyası:
-- @testing-library/jest-dom matcher'larını import eder
-
-### babel.config.js
-JavaScript transpiler ayarları:
-- React JSX desteği
-- Modern JavaScript özelliklerinin dönüştürülmesi
-
-## 📝 Yeni Test Ekleme
-
-1. Yeni bir component oluşturun:
-```jsx
-// src/components/Card.jsx
-export const Card = ({ title, content }) => (
-  <div className="card">
-    <h3>{title}</h3>
-    <p>{content}</p>
-  </div>
-);
-```
-
-2. Test dosyası oluşturun:
-```jsx
-// src/__tests__/Card.test.jsx
-import { render, screen } from '@testing-library/react';
-import { Card } from '../components/Card';
-
-test('renders card with title and content', () => {
-  render(<Card title="Test" content="Content" />);
-  expect(screen.getByText('Test')).toBeInTheDocument();
-  expect(screen.getByText('Content')).toBeInTheDocument();
-});
-```
-
-3. Testi çalıştırın:
-```bash
-npm test
-```
-
-## 🎨 UI Geliştirme
-
-Geliştirme sunucusu çalışırken yapılan değişiklikler otomatik olarak tarayıcıda güncellenir:
-
-```bash
-npm run dev
-```
-
-## 🤝 Katkıda Bulunma
-
-Bu proje öğrenme amaçlıdır. Yeni test örnekleri, component'ler veya iyileştirmeler eklemekten çekinmeyin!
-
-## 📚 Kaynaklar
-
-- [Jest Documentation](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/react)
-- [React Documentation](https://react.dev/)
-- [Testing Best Practices](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
-
-## 📄 Lisans
-
-MIT
-
----
-
-**Mutlu Testler! 🎉**
+CSS / SCSS / Styled Components (hangisini kullandıysan düzenleyebilirsin)
