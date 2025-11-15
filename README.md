@@ -31,4 +31,4 @@ Axios
 
 RapidAPI – COVID-19 Statistics API
 
-CSS / SCSS / Styled Components (hangisini kullandıysan düzenleyebilirsin)
+TailwindCss
