@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-10 md:px-20 py-5;
+  }
+  .header-link {
+    @apply hover:text-pink-300 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:h-0.5 after:bg-pink-400 hover:after:w-full
+  after:transition-all;
+  }
+
+  .hero-btn {
+    @apply bg-linear-to-r from-pink-600 to-purple-600 py-3 px-6 rounded-xl flex-1 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-medium;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
